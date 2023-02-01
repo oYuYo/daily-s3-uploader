@@ -38,5 +38,5 @@ jobs:
       # Upload a file to AWS s3
       - name:  Copy file to s3
         run: |
-          aws s3 cp ./test1.mp4 s3://${{ env.BUCKET_NAME }}/
-          aws s3 cp ./test2.mp4 s3://${{ env.BUCKET_NAME }}/
+          aws s3 cp ./pics1.mp4 s3://${{ env.BUCKET_NAME }}/
+          aws s3 cp ./pics2.mp4 s3://${{ env.BUCKET_NAME }}/

@@ -13,7 +13,7 @@ def save_photo(rnd, i, result)
   size_suff = 'c'
 
   url = URI.parse("https://live.staticflickr.com/#{server_id}/#{id}_#{secret}_#{size_suff}.jpg")
-  file = "./test#{i}.jpg"
+  file = "./pics#{i}.jpg"
 
   URI.open(file, 'wb') do |pass|
     URI.open(url) do |recieve|
