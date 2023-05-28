@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: ffmpeg install
         run: sudo apt-get -y install ffmpeg
-      - name: ImageMagick install
-        run: sudo apt-get -y install make imagemagick libmagickwand-dev  # "make" need to create Makefile
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: Set up Ruby 3.0
@@ -44,3 +42,5 @@ jobs:
         run: |
           aws s3 cp ./pics1.mp4 s3://${{ env.BUCKET_NAME }}/
           aws s3 cp ./pics2.mp4 s3://${{ env.BUCKET_NAME }}/
+      - name: Clear Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
