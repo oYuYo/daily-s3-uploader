@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: ffmpeg install
-        run: sudo apt-get -y install ffmpeg
+        run: sudo apt-get update && sudo apt-get -y install ffmpeg
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: Set up Ruby 3.0
