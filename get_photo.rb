@@ -12,6 +12,8 @@ def save_photo(rnd, i, result)
   secret = result[:photos][:photo][rnd][:secret]
   size_suff = 'b'
 
+  puts "id:#{id}"
+
   url = URI.parse("https://live.staticflickr.com/#{server_id}/#{id}_#{secret}_#{size_suff}.jpg")
   file = "./pics#{i}.jpg"
 
