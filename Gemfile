@@ -3,4 +3,4 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem "rmagick", "~> 5.1.0"
+gem "rmagick", "~> 5.3.0"
