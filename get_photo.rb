@@ -39,12 +39,9 @@ begin
     result = JSON.parse(res.body, {symbolize_names: true})
     max_size = result[:photos][:photo].size
 
-    2.times do |i|
-      random = Random.new
-      rnd = random.rand(0...max_size)
-      save_photo(rnd, i+1, result)
-      result[:photos][:photo].delete_at(rnd)
-    end
+    random = Random.new
+    rnd = random.rand(0...max_size)
+    save_photo(rnd, 1, result)
   else
     p response.header
   end

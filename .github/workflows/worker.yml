@@ -23,7 +23,7 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: Set up Ruby 3.0
-        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
       - name: Install dependencies
@@ -41,6 +41,5 @@ jobs:
       - name:  Copy file to s3
         run: |
           aws s3 cp ./pics1.mp4 s3://${{ env.BUCKET_NAME }}/
-          aws s3 cp ./pics2.mp4 s3://${{ env.BUCKET_NAME }}/
       - name: Clear Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
